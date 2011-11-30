@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.summary     = %q{Meaning of Life Siri Proxy Plugin}
   s.description = %q{This is a meaning of life plugin. It intercepts the phrase containing "meaning of life" and responds with a random message about the meaning of life. Definitions are stored in the file "mol.txt". }
 
-  s.rubyforge_project = "siriproxy-mol-plugin"
+  s.rubyforge_project = "siriproxy-meaningoflife"
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
