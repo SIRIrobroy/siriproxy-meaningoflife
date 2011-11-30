@@ -1,0 +1,10 @@
+Meaning of Life Siri Proxy Plugin
+---------------------------------
+
+This plugin overrides the default "What is the meaning of life?" responses by Apple servers.
+
+It loads the file mol.txt in the plugin directory and picks a random quote to say to the user.
+
+Speech pattern is very general. It will match any phrase containing the words "meaning of life".
+
+Have fun!
