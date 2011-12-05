@@ -10,8 +10,14 @@ class SiriProxy::Plugin::MeaningOfLife < SiriProxy::Plugin
   
   def initialize(config = {})
 
-    if File.exist? config["phrase_file"] + ""
-      self.phrase_file = config["phrase_file"]
+    if config["phrase_file"].nil?
+      x = ""
+    else
+      x = config["phrase_file"]
+    end
+    
+    if File.exist? x
+      self.phrase_file = x
     else
       self.phrase_file = File.dirname(File.dirname(__FILE__))+"/mol.txt"
     end
