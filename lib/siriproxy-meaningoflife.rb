@@ -16,7 +16,7 @@ class SiriProxy::Plugin::MeaningOfLife < SiriProxy::Plugin
   end
 
   listen_for /meaning of life/i do
-    lines = IO.readlines(File.dirname(File.dirname(__FILE__))+"mol.txt")
+    lines = IO.readlines(File.dirname(File.dirname(__FILE__))+"/mol.txt")
     rl = rand(lines.count-1)
     say lines[rl]
     request_completed
