@@ -9,9 +9,9 @@ class SiriProxy::Plugin::MeaningOfLife < SiriProxy::Plugin
   def initialize(config = {})
   @config = config 
     
-    ::MeaningOfLife.configure do |config|
-      config.phrase_file = @config['phrase_file'] 
-    end
+  #  ::MeaningOfLife.configure do |config|
+  #    config.phrase_file = @config['phrase_file'] 
+  #  end
     
   end
 
