@@ -6,11 +6,13 @@ require 'siri_objects'
 ######
 
 class SiriProxy::Plugin::MeaningOfLife < SiriProxy::Plugin
-  def initialize(config)
+  def initialize(config = {})
   @config = config 
     
     ::MeaningOfLife.configure do |config|
       config.phrase_file = @config['phrase_file'] 
+    end
+    
   end
 
   listen_for /meaning of life/i do
