@@ -6,9 +6,15 @@ require 'siri_objects'
 ######
 
 class SiriProxy::Plugin::MeaningOfLife < SiriProxy::Plugin
+  attr_accessor :phrase_file
+  
   def initialize(config = {})
-  @config = config 
-    
+
+    if File.exist? config["phrase_file"]
+      self.phrase_file = config["phrase_file"]
+    else
+      self.phrase_file = File.dirname(File.dirname(__FILE__))+"/mol.txt"
+    end
   #  ::MeaningOfLife.configure do |config|
   #    config.phrase_file = @config['phrase_file'] 
   #  end
@@ -16,7 +22,7 @@ class SiriProxy::Plugin::MeaningOfLife < SiriProxy::Plugin
   end
 
   listen_for /meaning of life/i do
-    lines = IO.readlines(File.dirname(File.dirname(__FILE__))+"/mol.txt")
+    lines = IO.readlines(self.phrase_file)
     rl = rand(lines.count-1)
     say lines[rl]
     request_completed
