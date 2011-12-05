@@ -7,7 +7,10 @@ require 'siri_objects'
 
 class SiriProxy::Plugin::MeaningOfLife < SiriProxy::Plugin
   def initialize(config)
-    #if you have custom configuration options, process them here!
+  @config = config 
+    
+    ::MeaningOfLife.configure do |config|
+      config.phrase_file = @config['phrase_file'] 
   end
 
   listen_for /meaning of life/i do
