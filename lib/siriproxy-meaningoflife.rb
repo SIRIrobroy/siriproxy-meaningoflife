@@ -27,12 +27,7 @@ class SiriProxy::Plugin::MeaningOfLife < SiriProxy::Plugin
     else
       self.phrase_file = File.dirname(File.dirname(__FILE__))+"/mol.txt"
     end
-        
-    if File.exist? x
-      self.phrase_file_1 = x
-    else
-      self.phrase_file_1 = File.dirname(File.dirname(__FILE__))+"/mol_1.txt"
-    end
+
   #  ::MeaningOfLife.configure do |config|
   #    config.phrase_file = @config['phrase_file'] 
   #  end
