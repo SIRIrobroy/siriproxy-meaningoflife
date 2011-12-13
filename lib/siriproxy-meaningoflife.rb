@@ -27,7 +27,7 @@ class SiriProxy::Plugin::MeaningOfLife < SiriProxy::Plugin
     
   end
 
-  listen_for /meaning of life/i do
+  listen_for /Döner im Arsch/i do
     lines = IO.readlines(self.phrase_file)
     rl = rand(lines.count-1)
     say lines[rl]
