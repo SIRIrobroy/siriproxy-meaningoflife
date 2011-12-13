@@ -7,6 +7,7 @@ require 'siri_objects'
 
 class SiriProxy::Plugin::MeaningOfLife < SiriProxy::Plugin
   attr_accessor :phrase_file
+  attr_accessor :phrase_file_1
   
   def initialize(config = {})
 
