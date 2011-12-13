@@ -41,17 +41,11 @@ class SiriProxy::Plugin::MeaningOfLife < SiriProxy::Plugin
     
   end
 
-  listen_for /tor im zaun/i do
+  listen_for /wie geht's/i do
     lines = IO.readlines(self.phrase_file)
     rl = rand(lines.count-1)
     say lines[rl]
     request_completed
   end
   
-  listen_for /tor macht auf/i do
-    lines = IO.readlines(self.phrase_file_1)
-    rl = rand(lines.count-1)
-    say lines[rl]
-    request_completed
-  end
  end
