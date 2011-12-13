@@ -23,7 +23,7 @@ class SiriProxy::Plugin::MeaningOfLife < SiriProxy::Plugin
     end
         
     if File.exist? x
-      self.phrase_file_1 = x
+      self.phrase_file = x
     else
       self.phrase_file_1 = File.dirname(File.dirname(__FILE__))+"/mol_1.txt"
     end
