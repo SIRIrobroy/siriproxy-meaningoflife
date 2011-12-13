@@ -41,4 +41,3 @@ class SiriProxy::Plugin::MeaningOfLife < SiriProxy::Plugin
     request_completed
   end
  end
-end
