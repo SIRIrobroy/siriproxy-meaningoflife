@@ -16,6 +16,12 @@ class SiriProxy::Plugin::MeaningOfLife < SiriProxy::Plugin
       x = config["phrase_file"]
     end
     
+   if config["phrase_file_1"].nil?
+      x = ""
+    else
+      x = config["phrase_file_1"]
+    end  
+    
     if File.exist? x
       self.phrase_file = x
     else
@@ -23,7 +29,7 @@ class SiriProxy::Plugin::MeaningOfLife < SiriProxy::Plugin
     end
         
     if File.exist? x
-      self.phrase_file = x
+      self.phrase_file_1 = x
     else
       self.phrase_file_1 = File.dirname(File.dirname(__FILE__))+"/mol_1.txt"
     end
@@ -40,7 +46,7 @@ class SiriProxy::Plugin::MeaningOfLife < SiriProxy::Plugin
     request_completed
   end
   
-  listen_for /tylla macht auf/i do
+  listen_for /tor macht auf/i do
     lines = IO.readlines(self.phrase_file_1)
     rl = rand(lines.count-1)
     say lines[rl]
