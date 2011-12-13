@@ -40,3 +40,4 @@ class SiriProxy::Plugin::MeaningOfLife < SiriProxy::Plugin
     say lines[rl]
     request_completed
   end
+  end
