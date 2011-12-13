@@ -34,7 +34,7 @@ class SiriProxy::Plugin::MeaningOfLife < SiriProxy::Plugin
     request_completed
   end  
 
-listen_for /latte macht auf/i do
+listen_for /tuer macht auf/i do
 lines = IO.readlines(self.phrase_file)
 rl = rand(lines.count-1)
 say lines[rl]
